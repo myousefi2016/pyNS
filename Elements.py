@@ -426,12 +426,9 @@ class WavePropagationElement(Element):
                 
             #Wall-Thickness
             if type(self.WallThickness) is not str:
-                len_wall_thickness = len(self.WallThickness)-1
-                idx_st = int(len_wall_thickness * s1)
-                idx_end = int(len_wall_thickness * s2)
+                h1 = (self.WallThickness[s2] - self.WallThickness[s1])/self.Length
+                h2 = self.WallThickness[s1]
 
-                h1 = (self.WallThickness[idx_end] - self.WallThickness[idx_st])/self.Length
-                h2 = self.WallThickness[idx_st]
                 h_z = h2+(h1*z)
                 self.WallThickness = h_z
             else:
@@ -439,12 +436,9 @@ class WavePropagationElement(Element):
                 evaluator.Evaluate(self.WallThickness)
                 
             #Young's Modulus
-            len_young_modulus = len(self.YoungModulus)-1
-            idx_st = int(len_young_modulus * s1) if type(self.YoungModulus) != dict else s1
-            idx_end = int(len_young_modulus * s2) if type(self.YoungModulus) != dict else s2
+            E1 = (self.YoungModulus[s2] - self.YoungModulus[s1])/self.Length
+            E2 = self.YoungModulus[s1]
 
-            E1 = (self.YoungModulus[idx_end] - self.YoungModulus[idx_st])/self.Length
-            E2 = self.YoungModulus[idx_st]
             E_z = E2+(E1*z)
             self.YoungModulus = E_z
             

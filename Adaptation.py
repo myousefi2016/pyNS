@@ -15,7 +15,7 @@
 
 ##   Developed with support from the EC FP7/2007-2013: ARCH, Project n. 224
 
-from numpy.lib.function_base import linspace
+from numpy import linspace
 
 class Adaptation(object):
     """

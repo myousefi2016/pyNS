@@ -21,7 +21,7 @@ from numpy.core.numeric import arange, zeros
 from numpy.core.fromnumeric import mean
 from numpy.lib.scimath import sqrt
 from numpy.ma.core import exp
-from numpy.lib.function_base import linspace
+from numpy import linspace
 
 
 def add_bessel(name):

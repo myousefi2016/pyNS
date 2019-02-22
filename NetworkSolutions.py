@@ -21,7 +21,7 @@ from InverseWomersley import InverseWomersley
 from numpy.core.fromnumeric import mean
 from numpy.core.numeric import array, zeros
 from math import pi
-from numpy.lib.function_base import linspace
+from numpy import linspace
 from numpy.core.numeric import arange
 from numpy.lib.scimath import sqrt
 from numpy.ma.core import ceil
